@@ -1,4 +1,5 @@
-# Minimal profile: clarity only, from the built-in catalogue.
+# Minimal profile: clarity only — fully self-contained (question + levels
+# inline, no dependency on the engine's built-in catalogue).
 # Used by the sample regression run (see DEMO.md "Run all samples").
 name: clarity
 description: Clarity-only scoring
@@ -6,3 +7,9 @@ description: Clarity-only scoring
 criteria:
   clarity:
     weight: 1.0
+    question: "Rate clarity for the text in `content`. How easily can a first-time reader with minimal context understand the ideas, explanations and relationships? Pick the level whose situation matches the text as a whole."
+    levels:
+      - "Meaning is frequently unclear: sentences must be re-read or guessed, and explanations confuse more than they help."
+      - "Noticeable clarity problems hinder understanding: vague terms, missing links between ideas, or confusing passages appear in several places."
+      - "The content is clear with minor issues: occasional awkward phrasing or a small gap that does not slow the reader much."
+      - "The content communicates ideas clearly and precisely: explanations, transitions and terminology are easy to follow throughout."

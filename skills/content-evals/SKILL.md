@@ -52,7 +52,8 @@ If the user supplies a confirmed outline or names the atoms → skip to Route 2.
 ## Route 2 — Build the profile (YAML only, no code)
 
 1. Catalogue first — enable by name (optional `weight`, default 1.0):
-   `clarity`, `structure`, `audience_fit`, `how_it_works_steps`,
+   `clarity`, `structure`, `consistency`, `findability`, `audience_fit`,
+   `how_it_works_steps`,
    `how_it_works_user_perspective`, `how_it_works_inputs_outputs`,
    `how_it_works_end_result`, `use_cases_concrete`,
    `use_cases_when_to_use`, `use_cases_when_not_use`, `who_audience_specific`,

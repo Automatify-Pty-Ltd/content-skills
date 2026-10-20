@@ -54,6 +54,30 @@ CRITERIA = {
             "Organisation and sequence strongly support the reader: clear headings, logical progression, each section builds on the previous.",
         ],
     },
+    "consistency": {
+        "question": (
+            "Rate consistency for the text in `content`. How consistently does "
+            "it use terminology, naming, formatting and language conventions? "
+            "Pick the level whose situation matches the text as a whole."),
+        "levels": [
+            "Inconsistent throughout: the same concept is called different things in different places, or naming, capitalisation and formatting shift randomly.",
+            "Noticeable inconsistencies: several terms or style conventions drift between sections, though the meaning stays recoverable.",
+            "Mostly consistent: one concept keeps one name and conventions hold, with a few slips a careful reader will catch.",
+            "Fully consistent: every concept keeps one name, and terminology, capitalisation, formatting and tone are uniform across the whole text.",
+        ],
+    },
+    "findability": {
+        "question": (
+            "Rate findability for the text in `content`. How easily can a "
+            "scanning reader locate the information they need? Pick the "
+            "level whose situation matches the text as a whole."),
+        "levels": [
+            "Not scannable: flat walls of text, headings that name nothing, and key facts buried where nobody would look.",
+            "Hard to scan: some headings exist but they are vague or inconsistent, and key information sits in unexpected places.",
+            "Mostly findable: informative headings and a predictable layout, with occasional key facts buried deeper than expected.",
+            "Fully findable: precise, consistent headings; key information front-loaded where a scanning reader would look; easy to navigate on first contact.",
+        ],
+    },
     "audience_fit": {
         "question": (
             "Rate audience fit for the text in `content`. How well does it "
