@@ -1,0 +1,14 @@
+# Self-contained profile: structure only — question + levels inline,
+# no dependency on the engine's built-in catalogue.
+name: structure
+description: Structure-only scoring
+
+criteria:
+  structure:
+    weight: 1.0
+    question: "Rate structure for the text in `content`. How well does the organisation and sequence of sections support a first-time reader's understanding and progress? Pick the level whose situation matches the text as a whole."
+    levels:
+      - "Disorganised: sections appear in no discernible order and the reader cannot tell where the text is going."
+      - "Noticeable structure problems: key information is buried, sections feel out of place, or the reader must hunt for the thread."
+      - "The content is well organised with minor issues: mostly logical order and headings, with an occasional rough transition."
+      - "Organisation and sequence strongly support the reader: clear headings, logical progression, each section builds on the previous."

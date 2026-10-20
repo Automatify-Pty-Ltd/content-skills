@@ -79,9 +79,12 @@ criteria:
       - "Complete / candid situation"
 ```
 
-3. Start from a shipped profile in `profiles/` rather than inventing:
-   `clarity.yaml`, `how-it-works.yaml`, `use-cases.yaml`, `who-can-use.yaml`,
-   `limitations.yaml`, `first-read.yaml`.
+3. Start from a shipped profile in `profiles/` rather than inventing.
+   Single-criterion profiles — `clarity.yaml`, `structure.yaml`,
+   `consistency.yaml`, `findability.yaml` — are fully self-contained
+   (question + levels inline). Topic profiles — `how-it-works.yaml`,
+   `use-cases.yaml`, `who-can-use.yaml`, `limitations.yaml`,
+   `first-read.yaml` — enable catalogue criteria by name.
 4. Validate offline before spending an API call:
 
        uv run - <<'PY'

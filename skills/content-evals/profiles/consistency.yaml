@@ -1,0 +1,14 @@
+# Self-contained profile: consistency only — question + levels inline,
+# no dependency on the engine's built-in catalogue.
+name: consistency
+description: Consistency-only scoring
+
+criteria:
+  consistency:
+    weight: 1.0
+    question: "Rate consistency for the text in `content`. How consistently does it use terminology, naming, formatting and language conventions? Pick the level whose situation matches the text as a whole."
+    levels:
+      - "Inconsistent throughout: the same concept is called different things in different places, or naming, capitalisation and formatting shift randomly."
+      - "Noticeable inconsistencies: several terms or style conventions drift between sections, though the meaning stays recoverable."
+      - "Mostly consistent: one concept keeps one name and conventions hold, with a few slips a careful reader will catch."
+      - "Fully consistent: every concept keeps one name, and terminology, capitalisation, formatting and tone are uniform across the whole text."

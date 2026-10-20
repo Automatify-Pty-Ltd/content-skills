@@ -1,0 +1,14 @@
+# Self-contained profile: findability only — question + levels inline,
+# no dependency on the engine's built-in catalogue.
+name: findability
+description: Findability-only scoring
+
+criteria:
+  findability:
+    weight: 1.0
+    question: "Rate findability for the text in `content`. How easily can a scanning reader locate the information they need? Pick the level whose situation matches the text as a whole."
+    levels:
+      - "Not scannable: flat walls of text, headings that name nothing, and key facts buried where nobody would look."
+      - "Hard to scan: some headings exist but they are vague or inconsistent, and key information sits in unexpected places."
+      - "Mostly findable: informative headings and a predictable layout, with occasional key facts buried deeper than expected."
+      - "Fully findable: precise, consistent headings; key information front-loaded where a scanning reader would look; easy to navigate on first contact."
