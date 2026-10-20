@@ -1,0 +1,14 @@
+# Limitations coverage: 2 atomic questions (technical, capability).
+# Fills {{subject}} from context.
+# Copy this file and set context.subject for your product.
+name: limitations
+description: Limitations coverage of a product or feature
+
+context:
+  subject: "the product or feature being documented"
+
+criteria:
+  limitations_technical:
+    weight: 1.0
+  limitations_capability:
+    weight: 1.0

@@ -1,0 +1,16 @@
+# Use-case coverage: 3 atomic questions (concrete cases, when-to-use,
+# when-not-use). Fills {{subject}} from context.
+# Copy this file and set context.subject for your product.
+name: use-cases
+description: Use-case coverage of a product or feature
+
+context:
+  subject: "the product or feature being documented"
+
+criteria:
+  use_cases_concrete:
+    weight: 1.0
+  use_cases_when_to_use:
+    weight: 1.0
+  use_cases_when_not_use:
+    weight: 1.0

@@ -1,0 +1,17 @@
+# Who-can-use coverage: 3 atomic questions (audience, why-fit, platform fit).
+# Fills {{subject}} and {{platforms}} from context.
+# Copy this file and set context.subject + context.platforms for your product.
+name: who-can-use
+description: Who-can-use-it coverage of a product or feature
+
+context:
+  subject: "the product or feature being documented"
+  platforms: "the supported editions or hosting options"
+
+criteria:
+  who_audience_specific:
+    weight: 1.0
+  who_why_fit:
+    weight: 1.0
+  who_platform_fit:
+    weight: 1.0

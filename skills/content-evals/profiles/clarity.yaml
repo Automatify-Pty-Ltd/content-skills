@@ -1,0 +1,8 @@
+# Minimal profile: clarity only, from the built-in catalogue.
+# Used by the sample regression run (see DEMO.md "Run all samples").
+name: clarity
+description: Clarity-only scoring
+
+criteria:
+  clarity:
+    weight: 1.0

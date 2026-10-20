@@ -1,0 +1,21 @@
+# First-time-read experience: 5 atomic questions (what-it-is explicit /
+# placed / first-reader wording, flow progression, forward references).
+# Fills {{subject}} from context.
+# Copy this file and set context.subject for your product.
+name: first-read
+description: First-time-read experience of a document's opening and flow
+
+context:
+  subject: "the product or feature being documented"
+
+criteria:
+  what_it_is_explicit:
+    weight: 1.0
+  what_it_is_placement:
+    weight: 1.0
+  what_it_is_first_reader:
+    weight: 1.0
+  flow_progression:
+    weight: 1.0
+  flow_no_forward_refs:
+    weight: 1.0
