@@ -66,6 +66,44 @@ CRITERIA = {
             "Fully consistent: every concept keeps one name, and terminology, capitalisation, formatting and tone are uniform across the whole text.",
         ],
     },
+    "consistency_terminology": {
+        "question": (
+            "Rate terminology consistency for the text in `content`. Does each "
+            "concept keep a single name throughout — no synonym drift between "
+            "sections? Pick the level whose situation matches the text as a whole."),
+        "levels": [
+            "Terms drift constantly: the same concept is called different things in different sections, and the reader must guess they are the same thing.",
+            "Noticeable drift: a few concepts swap names partway through, though the meaning stays recoverable.",
+            "Mostly stable: each concept keeps one name, with one or two slips a careful reader will catch.",
+            "Fully stable: every concept keeps exactly one name across the whole text; no synonyms or renames.",
+        ],
+    },
+    "consistency_formatting": {
+        "question": (
+            "Rate formatting consistency for the text in `content`. Are "
+            "capitalisation, heading style, list style and punctuation "
+            "conventions uniform throughout? Pick the level whose situation "
+            "matches the text as a whole."),
+        "levels": [
+            "Formatting shifts randomly: headings in mixed styles, some lists punctuated and some not, capitalisation varies without pattern.",
+            "Noticeable inconsistencies: several formatting conventions drift between sections, though the text remains readable.",
+            "Mostly uniform: one convention per element, with a few slips a careful reader will catch.",
+            "Fully uniform: headings, lists, capitalisation and punctuation follow one set of conventions across the whole text.",
+        ],
+    },
+    "consistency_language": {
+        "question": (
+            "Rate language-convention consistency for the text in `content`. Do "
+            "register and spelling stay uniform (no formal↔colloquial mixing, no "
+            "en-GB↔en-US switching)? Pick the level whose situation matches the "
+            "text as a whole."),
+        "levels": [
+            "Register and spelling jump around: sentences swing between formal and colloquial, or spelling variants alternate with no pattern.",
+            "Noticeable mixing: register or spelling convention shifts in places, though the text keeps one voice overall.",
+            "Mostly uniform register and spelling, with a few slips a careful reader will catch.",
+            "One voice throughout: register, formality and spelling convention are uniform across the whole text.",
+        ],
+    },
     "findability": {
         "question": (
             "Rate findability for the text in `content`. How easily can a "

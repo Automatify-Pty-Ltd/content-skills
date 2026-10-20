@@ -38,7 +38,8 @@ Rule: a broad question hides several judgments behind one answer. Never score
    How it works → 4 (steps, user perspective, inputs/outputs, end result);
    Use cases → 3 (concrete cases, when-to-use, when-not-use); Who can use it
    → 3 (audience, why-fit, platform fit); Limitations → 2 (technical,
-   capability); First read → 5 (what-it-is explicit/placed/first-reader,
+   capability); Consistency → 3 (terminology, formatting, language); First
+   read → 5 (what-it-is explicit/placed/first-reader,
    flow progression, forward references).
 4. Present the two-level outline (criterion → atomic questions) to the user;
    confirm counts and wording BEFORE building the profile. Use ask_user or
@@ -52,7 +53,9 @@ If the user supplies a confirmed outline or names the atoms → skip to Route 2.
 ## Route 2 — Build the profile (YAML only, no code)
 
 1. Catalogue first — enable by name (optional `weight`, default 1.0):
-   `clarity`, `structure`, `consistency`, `findability`, `audience_fit`,
+   `clarity`, `structure`, `consistency`, `consistency_terminology`,
+   `consistency_formatting`, `consistency_language`, `findability`,
+   `audience_fit`,
    `how_it_works_steps`,
    `how_it_works_user_perspective`, `how_it_works_inputs_outputs`,
    `how_it_works_end_result`, `use_cases_concrete`,
@@ -81,10 +84,10 @@ criteria:
 
 3. Start from a shipped profile in `profiles/` rather than inventing.
    Single-criterion profiles — `clarity.yaml`, `structure.yaml`,
-   `consistency.yaml`, `findability.yaml` — are fully self-contained
-   (question + levels inline). Topic profiles — `how-it-works.yaml`,
-   `use-cases.yaml`, `who-can-use.yaml`, `limitations.yaml`,
-   `first-read.yaml` — enable catalogue criteria by name.
+   `findability.yaml` — are fully self-contained (question + levels
+   inline). Topic profiles — `consistency.yaml` (terminology, formatting,
+   language), `how-it-works.yaml`, `use-cases.yaml`, `who-can-use.yaml`,
+   `limitations.yaml`, `first-read.yaml` — enable catalogue criteria by name.
 4. Validate offline before spending an API call:
 
        uv run - <<'PY'
