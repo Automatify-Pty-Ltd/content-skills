@@ -83,11 +83,12 @@ criteria:
 ```
 
 3. Start from a shipped profile in `profiles/` rather than inventing.
-   Single-criterion profiles — `clarity.yaml`, `structure.yaml`,
-   `findability.yaml` — are fully self-contained (question + levels
-   inline). Topic profiles — `consistency.yaml` (terminology, formatting,
-   language), `how-it-works.yaml`, `use-cases.yaml`, `who-can-use.yaml`,
-   `limitations.yaml`, `first-read.yaml` — enable catalogue criteria by name.
+   Self-contained profiles (question + levels inline):
+   `clarity.yaml`, `structure.yaml`, `findability.yaml`, `consistency.yaml`
+   (terminology, formatting, language). Catalogue-referencing profiles
+   (enable built-in criteria by name): `how-it-works.yaml`,
+   `use-cases.yaml`, `who-can-use.yaml`, `limitations.yaml`,
+   `first-read.yaml`.
 4. Validate offline before spending an API call:
 
        uv run - <<'PY'
