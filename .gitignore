@@ -221,3 +221,7 @@ __marimo__/
 
 # Skill-local caches
 **/__pycache__/
+
+
+# Local 
+.local
