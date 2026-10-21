@@ -1,0 +1,38 @@
+# Unslop plain speech, decomposed — fully self-contained: questions + levels
+# inline, no dependency on the engine's built-in catalogue.
+# Scope: the "### Plain speech" section of the unslop skill (patterns 27-31),
+# full coverage. Clusters share one judgment per question: concreteness
+# (27 feelings-vs-mechanisms + 30 adverb-propped weak verbs), plain words
+# (31 formal synonyms dressing simple ideas), sentence shape (28 dense
+# sentences + 29 passive voice hiding the actor).
+# Boundary note: sentence density overlaps clarity_wording, which scores the
+# same comprehension ground. Running this profile and clarity on the same
+# text double-counts density — keep them as separate lenses, not one report.
+name: unslop-plain-speech
+description: AI tells from the unslop Plain speech section (concreteness, plain words, sentence shape)
+
+criteria:
+  unslop_concreteness:
+    weight: 1.0
+    question: "Rate the concreteness of the text in `content`. Do sentences tell the reader what happens — an exact command, number or behaviour — or do they name impressions ('the database stays close at hand', 'types you can read') where the mechanism would say more ('.toSQL() returns the exact string sent to the database', 'a column rename fails the build')? Pick the level whose situation matches the text as a whole."
+    levels:
+      - "Impressionistic throughout: sentences name how things feel instead of what they do, mechanisms and numbers never appear, and no sentence contains a fact another project's docs could not reuse unchanged."
+      - "Noticeably impressionistic: several sentences describe feelings rather than behaviour, and weak verbs lean on adverbs where a precise verb or measured delta would say more."
+      - "Mostly concrete: the text names mechanisms, facts or numbers where it matters, with the occasional impressionistic or adverb-propped sentence a careful reader will sharpen."
+      - "Concrete throughout: every sentence states what happens — the exact command, number or behaviour — verbs carry the meaning without adverb crutches, and nothing could be dropped into another project's docs unchanged."
+  unslop_plain_words:
+    weight: 1.0
+    question: "Rate the vocabulary of the text in `content`. Does it use the plain word wherever one exists, or dress simple ideas in formal synonyms — 'utilize' for use, 'leverage' for use, 'facilitate' for help, 'in the event that' for if? Pick the level whose situation matches the text as a whole."
+    levels:
+      - "Formal dress everywhere: plain ideas arrive in fancy synonyms ('utilize', 'leverage', 'facilitate', 'numerous', 'in the event that') across most of the text."
+      - "Noticeable pomposity: several plain ideas are dressed as formal synonyms where the simple word would be clearer."
+      - "Mostly plain: the simple word appears almost everywhere, with the occasional 'utilize' or 'facilitate' a careful reader will swap."
+      - "Plain throughout: 'use', 'help', 'many', 'if' wherever they fit, and no simple idea is dressed in a fancier synonym."
+  unslop_sentence_shape:
+    weight: 1.0
+    question: "Rate the sentence shape of the text in `content`. Does each sentence carry one idea the reader absorbs in a single pass, and does active voice name who does what — or do sentences force backtracking and hide actors behind passives ('queries are validated' instead of 'the compiler validates queries')? Pick the level whose situation matches the text as a whole."
+    levels:
+      - "Dense and evasive throughout: sentence after sentence packs several ideas and forces backtracking, and actors disappear behind passives so key actions have no doer."
+      - "Noticeably tangled: readers must backtrack to parse packed sentences, and important actions are stated with the actor missing where naming it matters."
+      - "Mostly shaped for the reader: one idea per sentence and actors named, with an occasional packed or passive sentence a careful reader will restructure."
+      - "Clean shape throughout: each sentence carries one idea, active voice names who does what, and passive survives only where the actor is unknown or does not matter."
