@@ -1,14 +1,39 @@
-# Self-contained profile: structure only — question + levels inline,
+# Structure, decomposed — fully self-contained: questions + levels inline,
 # no dependency on the engine's built-in catalogue.
+# Why decomposed (TypeSafe rule: one dimension per Score question): the single
+# structure question mixes order, grouping and space allocation, and confidence
+# drops on text strong in one and weak in another — material can be grouped
+# cleanly yet arrive in an order the reader cannot follow.
+# Borrowed signals removed with this decomposition: heading label quality and
+# key-fact placement belong to findability, heading style uniformity to
+# consistency, sentence transitions to clarity_flow.
+# Used by the sample regression run (README: loop samples/*.md against this
+# profile — expect clear.md high, muddled.md middle, jargon.md distinct).
 name: structure
-description: Structure-only scoring
+description: Structure of order, grouping and space allocation
 
 criteria:
-  structure:
+  structure_order:
     weight: 1.0
-    question: "Rate structure for the text in `content`. How well does the organisation and sequence of sections support a first-time reader's understanding and progress? Pick the level whose situation matches the text as a whole."
+    question: "Rate the order of the text in `content`. Do parts arrive in a sequence the reader can follow — prerequisites before what depends on them, and each section sitting where it serves the argument? Pick the level whose situation matches the text as a whole."
     levels:
-      - "Disorganised: sections appear in no discernible order and the reader cannot tell where the text is going."
-      - "Noticeable structure problems: key information is buried, sections feel out of place, or the reader must hunt for the thread."
-      - "The content is well organised with minor issues: mostly logical order and headings, with an occasional rough transition."
-      - "Organisation and sequence strongly support the reader: clear headings, logical progression, each section builds on the previous."
+      - "No usable order: sections appear in a sequence the reader cannot follow, prerequisites arrive after what depends on them, and material sits where it serves no purpose."
+      - "Noticeable order problems: some sections come too early or too late — a concept is used before it is introduced, or material appears after the argument has moved past it."
+      - "Mostly ordered: the sequence works from start to finish, with an occasional section that would sit better elsewhere."
+      - "Deliberately ordered: each part arrives exactly when the reader needs it, and prerequisites always come before what depends on them."
+  structure_grouping:
+    weight: 1.0
+    question: "Rate the grouping of the text in `content`. Does related material live together — one topic per section, in units of sensible size? Pick the level whose situation matches the text as a whole."
+    levels:
+      - "No grouping: related material is scattered across the text, sections mix unrelated topics, and content boundaries follow no plan."
+      - "Noticeable grouping problems: topics are split across several places, or single sections bundle unrelated material together."
+      - "Mostly grouped: each section keeps to one topic, with occasional mixing or splitting a careful reader will notice."
+      - "Cleanly grouped: every topic lives in exactly one place, and the size of each unit matches what belongs in it."
+  structure_balance:
+    weight: 1.0
+    question: "Rate the balance of the text in `content`. Does the space given to each part match its importance to the reader? Pick the level whose situation matches the text as a whole."
+    levels:
+      - "Emphasis is reversed or random: peripheral details get the room while what the reader came for is missing, buried in a passing sentence, or nowhere."
+      - "Noticeable misallocation: important material is compressed to a line while secondary material sprawls, or several passages wander off the point."
+      - "Mostly proportionate: important material gets appropriate space, with occasional over-detailed asides or slightly thin coverage of a key point."
+      - "Proportionate throughout: space matches importance everywhere — the key material gets room, the peripheral stays brief."

@@ -1,15 +1,36 @@
-# Minimal profile: clarity only — fully self-contained (question + levels
-# inline, no dependency on the engine's built-in catalogue).
-# Used by the sample regression run (see DEMO.md "Run all samples").
+# Clarity, decomposed — fully self-contained: questions + levels inline,
+# no dependency on the engine's built-in catalogue.
+# Why decomposed (TypeSafe rule: one dimension per Score question): the single
+# clarity question mixes wording, idea-to-idea flow and explanation quality,
+# and confidence drops on text strong in one and weak in another — a crisp
+# sentence can still sit in a jumpy paragraph or under a thin explanation.
+# Used by the sample regression run (README: loop samples/*.md against this
+# profile — expect clear.md high, muddled.md middle, jargon.md ~0).
 name: clarity
-description: Clarity-only scoring
+description: Clarity of wording, flow between ideas and explanation quality
 
 criteria:
-  clarity:
+  clarity_wording:
     weight: 1.0
-    question: "Rate clarity for the text in `content`. How easily can a first-time reader with minimal context understand the ideas, explanations and relationships? Pick the level whose situation matches the text as a whole."
+    question: "Rate wording clarity for the text in `content`. How easily do individual sentences read — are terms concrete and phrasing natural, with no sentence that must be re-read to parse? Pick the level whose situation matches the text as a whole."
     levels:
-      - "Meaning is frequently unclear: sentences must be re-read or guessed, and explanations confuse more than they help."
-      - "Noticeable clarity problems hinder understanding: vague terms, missing links between ideas, or confusing passages appear in several places."
-      - "The content is clear with minor issues: occasional awkward phrasing or a small gap that does not slow the reader much."
-      - "The content communicates ideas clearly and precisely: explanations, transitions and terminology are easy to follow throughout."
+      - "Sentences frequently resist reading: tangled phrasing and vague or misused words mean the reader must re-read or guess what each sentence means."
+      - "Noticeable wording problems: vague terms and awkward phrasing appear in several places and slow the reader, though the meaning stays recoverable."
+      - "Mostly precise: sentences read cleanly, with one or two awkward or vague phrases a careful reader will catch."
+      - "Precise throughout: wording is concrete and natural, and every sentence parses on first read; no vague terms."
+  clarity_flow:
+    weight: 1.0
+    question: "Rate flow for the text in `content`. How well do ideas connect — are transitions present and does each part build on what came before? Pick the level whose situation matches the text as a whole."
+    levels:
+      - "Ideas appear one after another with no connection: transitions are absent, the order feels arbitrary, and the reader cannot tell how one part relates to the next."
+      - "Noticeable gaps between ideas: links are missing or transitions abrupt in several places, so the reader must infer how parts connect, though the thread stays followable."
+      - "Mostly connected: ideas follow one another in a sensible order, with an occasional abrupt transition a careful reader will catch."
+      - "Fully connected: each idea builds on the previous one, transitions carry the reader from part to part, and no relationship between ideas is left for the reader to infer."
+  clarity_explanations:
+    weight: 1.0
+    question: "Rate explanation quality for the text in `content`. When an idea is explained, does the explanation give a first-time reader what they need — or confuse, skip steps, or assume context? Pick the level whose situation matches the text as a whole."
+    levels:
+      - "Explanations confuse more than they help: they skip steps the reader needs, contradict the surrounding material, or explain the wrong thing."
+      - "Explanations hinder understanding in places: important steps are missing or context is assumed that the first-time reader lacks, appearing in several spots."
+      - "Explanations mostly land: each idea is explained well enough to follow, with an occasional small gap a careful reader will bridge."
+      - "Explanations do their job throughout: every idea gets the context and steps a first-time reader needs, with nothing important left unexplained."
