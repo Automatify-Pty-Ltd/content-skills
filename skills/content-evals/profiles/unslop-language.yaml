@@ -1,0 +1,41 @@
+# Unslop language, decomposed — fully self-contained: questions + levels
+# inline, no dependency on the engine's built-in catalogue.
+# Scope: the "### Language" section of the unslop skill (patterns 7-12),
+# full coverage. Clusters share one judgment: AI vocabulary (7 tell words +
+# 8 fancy copulas — plain word where one exists), formulas (9 contrast
+# frames + 10 forced triplets + 12 false ranges — ideas in their natural
+# shape), synonym cycling (11 alone — one name per thing).
+# Documented overlap — lenses are read per-profile, never summed:
+# pivotal/vibrant/testament also appear in inflation's question examples
+# (unslop-content, promotional lens); the fancy-copy axis sits next to
+# plain_words (unslop-plain-speech, pattern 31) and
+# consistency_terminology (factual term drift, vs stylistic elegant
+# variation scored here).
+name: unslop-language
+description: AI tells from the unslop Language section (AI vocabulary, stock formulas, synonym cycling)
+
+criteria:
+  unslop_ai_vocab:
+    weight: 1.0
+    question: "Rate the vocabulary of the text in `content`. Does it choose plain words, or reach for AI-typical vocabulary — 'additionally', 'delve', 'crucial', 'enhance', 'underscore', 'intricate', 'landscape' as metaphor, 'tapestry' as metaphor — and fancy copulas ('serves as', 'stands as', 'boasts', 'features') where 'is' or 'has' would do? Pick the level whose situation matches the text as a whole."
+    levels:
+      - "AI vocabulary everywhere: most sentences reach for the tell words or fancy copulas — 'delve', 'underscore', 'intricate tapestry', 'serves as', 'boasts' — standing in for the plain words that would carry the meaning."
+      - "Noticeable AI vocabulary: several tell words or fancy copulas appear, though plain words still carry much of the text."
+      - "Mostly plain: an occasional 'crucial' or 'serves as' a careful reader will swap, and no stock phrases pile up."
+      - "Plain throughout: 'is' and 'has' do the connecting, and no AI-typical word stands in for a plain one."
+  unslop_formulas:
+    weight: 1.0
+    question: "Rate the sentence formulas of the text in `content`. Are ideas stated in their natural shape, or forced into stock devices — 'not just X, but Y' contrast frames, ideas padded into parallel triplets ('faster, better, cheaper'), and 'from X to Y' ranges where X and Y sit on no meaningful scale? Pick the level whose situation matches the text as a whole."
+    levels:
+      - "Formulas everywhere: contrast frames, padded triplets and false ranges shape sentence after sentence — the content bends to the device."
+      - "Noticeable formulas: several stock devices ('not just..., but...', triplets without natural content, false ranges) appear where direct statements would do."
+      - "Mostly natural: points state themselves plainly, with an occasional stock device a careful reader will unwind."
+      - "No stock formulas: every contrast, grouping and range exists because the content calls for it — ideas stated directly, in their natural number."
+  unslop_synonym_cycling:
+    weight: 1.0
+    question: "Rate the naming discipline of the text in `content`. Does each thing keep one name — repetition owned — or does the text cycle synonyms to avoid repetition, 'protagonist', 'main character', 'central figure', 'hero' all in one paragraph? Pick the level whose situation matches the text as a whole."
+    levels:
+      - "Synonym cycling throughout: the same thing gets a new name every few sentences, and the reader must track which of the names refer to the same thing."
+      - "Noticeable cycling: names alternate in several places ('the framework', 'the solution', 'the tool'), though the meaning stays recoverable."
+      - "Mostly stable: each thing keeps one name, with an occasional elegant-variation swap a careful reader will catch."
+      - "One name throughout: every thing is called the same thing every time, and repetition is owned rather than papered over."
