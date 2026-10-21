@@ -1,0 +1,39 @@
+# Unslop content tells, decomposed — fully self-contained: questions + levels
+# inline, no dependency on the engine's built-in catalogue.
+# Scope: the "### Content" section of the unslop skill (repos/unslop/SKILL.md)
+# — puffery, name-dropping, superficial -ing phrases, promotional language,
+# vague attributions, formulaic challenges. Pattern clusters grouped into one
+# Score question per judgment (TypeSafe rule: one dimension per question):
+# puffery/promotional/formulaic challenges share "inflate vs state facts",
+# name-dropping/vague attributions share "named sources vs unnamed authority".
+# Language/Style/Filler/Jargon/Plain-speech unslop patterns are out of scope.
+# No slop-heavy regression sample exists yet (see samples/); jargon.md scoring
+# mid-high here is correct, not a rubric failure.
+name: unslop-content
+description: AI tells from the unslop Content section (inflation, attribution, hollow connectives)
+
+criteria:
+  unslop_inflation:
+    weight: 1.0
+    question: "Rate the register of the text in `content`. Does it state events and facts plainly, or inflate them with puffery phrases, promotional adjectives and formulaic framing like 'Despite challenges, it continues to thrive'? Pick the level whose situation matches the text as a whole."
+    levels:
+      - "Inflated throughout: puffery ('testament to', 'pivotal moment'), promotional adjectives ('vibrant', 'breathtaking', 'must-visit') and formulaic framing stand in for concrete statements in most sentences."
+      - "Noticeable inflation: puffery, promotional language or formulaic framing appears in several places, though facts still surface between the flourishes."
+      - "Mostly factual: the text states what happened, with the occasional inflated phrase a careful reader will notice."
+      - "Plain throughout: every claim is a concrete statement of what happened; no puffery, promotional adjectives or formulaic framing."
+  unslop_attribution:
+    weight: 1.0
+    question: "Rate the attributions of the text in `content`. Does it lean on unnamed authority — 'Experts believe', 'Industry reports suggest', media outlets listed without context — or does it name its sources and make first-hand claims? Pick the level whose situation matches the text as a whole."
+    levels:
+      - "Propped up throughout: most claims rest on unnamed experts, industry reports or context-free mention lists, and no source is ever named."
+      - "Noticeable gestures: several claims appeal to unnamed authority or drop mentions with no context, though the text also states some things first-hand."
+      - "Mostly grounded: borrowed claims are named or first-hand, with one or two vague gestures a careful reader will catch."
+      - "No vague appeals: every borrowed claim names its source and what was found, or the text makes only first-hand claims that need no sourcing."
+  unslop_hollow_connectives:
+    weight: 1.0
+    question: "Rate the connective phrases of the text in `content`. Do participial phrases like 'highlighting...', 'ensuring...', 'reflecting...', 'showcasing...' carry real substance, or do they gesture at benefits and evidence that never arrive? Pick the level whose situation matches the text as a whole."
+    levels:
+      - "Hollow everywhere: -ing phrases hanging off sentence after sentence promise substance and deliver none — no source, number or mechanism follows them."
+      - "Noticeably hollow: several sentences end in -ing phrases that name a benefit ('ensuring better outcomes') without anything backing it."
+      - "Mostly substantive: the -ing phrases that appear usually carry real content, with an occasional hollow one a careful reader will trim."
+      - "No hollow connectors: every -ing phrase is followed by concrete content, or the construction does not appear at all."
