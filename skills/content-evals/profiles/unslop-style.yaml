@@ -1,0 +1,33 @@
+# Unslop style, decomposed — fully self-contained: questions + levels inline,
+# no dependency on the engine's built-in catalogue.
+# Scope: the "### Style" section of the unslop skill, patterns 13-16 only.
+# Patterns 17-19 (title-case headings, decorative emojis, curly quotes) are
+# excluded by design: mechanically detectable, so a lint pass is the right
+# tool, not a Score question.
+# Clusters share one judgment: punctuation (13 dashes + 14 connector colons —
+# the skill treats a dash habit swapped for parentheses as the same tell),
+# boldface (15 bolded proper nouns + 16 restating inline-header lists — both
+# are bold-as-decoration instead of bold-as-content).
+# Boundary: consistency_formatting asks "uniform?", this asks "tell-free?" —
+# a consistently title-cased doc passes there and fails the excluded #17.
+# Requires source markdown in `content`: rendered or scraped text loses bold.
+name: unslop-style
+description: AI tells from the unslop Style section (punctuation crutches, boldface decoration)
+
+criteria:
+  unslop_punctuation:
+    weight: 1.0
+    question: "Rate the punctuation of the text in `content`. Do dashes, parenthetical asides or mid-sentence colons carry separation that a plain sentence should — or are thoughts separated by sentences and commas, with colons only before lists and examples? Pick the level whose situation matches the text as a whole."
+    levels:
+      - "Crutch punctuation throughout: dashes carry nearly every clause break, mid-sentence colons act as connectors, and parentheses hide asides that should stand as sentences."
+      - "Noticeable crutch use: dashes, connector colons or parenthetical asides stand in for sentences in several places — swapping one device for another is the same tell."
+      - "Mostly plain: colons introduce lists and examples only, with one or two stray dashes or connector colons a careful reader will rewrite."
+      - "No crutch punctuation: sentences and commas carry every thought, colons introduce lists and examples only, and no dashes appear."
+  unslop_boldface:
+    weight: 1.0
+    question: "Rate the boldface of the text in `content`. Does bold carry content for the reader, or decorate — names and acronyms bolded with no reason, or bold-label headers that restate their own line ('**Performance:** Performance improved...') instead of introducing new detail ('**Schema in TypeScript.** Tables live in one file.')? Pick the level whose situation matches the text as a whole."
+    levels:
+      - "Bold decoration throughout: nearly every proper noun or acronym is bolded, and bold-label headers restate their own line (**Performance:** Performance improved) instead of adding anything."
+      - "Noticeably decorative: several names or acronyms carry bold with no reason, and label-colon headers restate themselves in a few places."
+      - "Mostly meaningful: bold appears with purpose, with one or two decorative bolds or restating labels a careful reader will drop."
+      - "No bold decoration: names and acronyms stay unbolded, any bold lead-in ends in a period and introduces genuinely new detail, and no label restates its own line."
